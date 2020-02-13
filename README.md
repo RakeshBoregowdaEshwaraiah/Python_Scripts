@@ -1,2 +1,2 @@
 # Python_Scripts
-Git and Jenkins integration
+SMS-Automation.py: Using the script user can send sms to clients.
