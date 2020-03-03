@@ -1,0 +1,45 @@
+#uses of OS module in Python
+
+import os
+os.path.join('srv','jas','logs') # 'srv//jas//logs.  Notice that the backslashes are doubled because each backslash needs to be escaped by another
+                                  backslash character.
+ myFiles = ['accounts.txt', 'details.csv', 'invite.docx']
+ for filename in myFiles:
+print(os.path.join('C:\\Users\\asweigart', filename))
+#C:\Users\asweigart\accounts.txt
+#C:\Users\asweigart\details.csv
+#C:\Users\asweigart\invite.docx
+>>> os.getcwd()
+'C:\\Python34'
+>>> os.chdir('C:\\Windows\\System32')
+>>> os.getcwd()
+'C:\\Windows\\System32'
+ os.makedirs('C:\\jas\\srv\\logs')
+ calcFilePath = 'C:\\Windows\\System32\\calc.exe'
+>>> os.path.split(calcFilePath)
+('C:\\Windows\\System32', 'calc.exe')
+>>> os.path.getsize('C:\\Windows\\System32\\calc.exe')
+776192
+>>> os.listdir('C:\\Windows\\System32')
+['0409', '12520437.cpx', '12520850.cpx', '5U877.ax', 'aaclient.dll',
+--snip--
+'xwtpdui.dll', 'xwtpw32.dll', 'zh-CN', 'zh-HK', 'zh-TW', 'zipfldr.dll']
+''' To get total size of directory'''
+totalSize = 0
+>>> for filename in os.listdir('C:\\Windows\\System32'):
+ totalSize = totalSize + os.path.getsize(os.path.join('C:\\Windows\\System32', filename))
+>>> print(totalSize)
+
+#------to check if the content is file or directory-----
+>>> os.path.exists('C:\\Windows')
+True
+>>> os.path.exists('C:\\some_made_up_folder')
+False
+>>> os.path.isdir('C:\\Windows\\System32')
+True
+>>> os.path.isfile('C:\\Windows\\System32')
+False
+>>> os.path.isdir('C:\\Windows\\System32\\calc.exe')
+False
+>>> os.
+#################################################
