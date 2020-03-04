@@ -1,0 +1,17 @@
+# The respective file indicates the use of shutil module in Python.
+
+>>> import shutil, os
+>>> os.chdir('C:\\')
+>>> shutil.copy('C:\\spam.txt', 'C:\\delicious')
+'C:\\delicious\\spam.txt'
+ >>> shutil.copy('eggs.txt', 'C:\\delicious\\eggs2.txt')
+'C:\\delicious\\eggs2.txt'
+#Copying of files from one location to different location.
+
+>>> import shutil, os
+>>> os.chdir('C:\\')
+>>> shutil.copytree('C:\\bacon', 'C:\\bacon_backup')
+'C:\\bacon_backup'
+'''The shutil.copytree() call creates a new folder named bacon_backup with
+the same content as the original bacon folder. You have now safely backed up
+your precious, precious bacon'''
