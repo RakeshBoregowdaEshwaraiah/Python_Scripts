@@ -17,3 +17,4 @@ for root, dirs, files in os.walk(PATH):
 print('Number of files',fileCount)
 print('Number of Directories',dirCount)
 print('Total:',(dirCount + fileCount))
+print("Successful")
