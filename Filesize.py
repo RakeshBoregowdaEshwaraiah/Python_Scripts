@@ -1,4 +1,4 @@
-import os       # Load the library module
+import os       # Load the library module  
 directory = 'C:\Users\RAKESBE\Desktop\Personal\Work\Python\scripts'# Set the variable directory to be the current directory
 dir_size = 0    # Set the size to 0
 
