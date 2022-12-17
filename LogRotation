@@ -1,0 +1,36 @@
+Automatic backup of log files to S3 from EC2 instances
+
+Install awscli package  (Create a separate folder to perform this installation)
+
+The awscli package is used to interact with AWS using the command line interface
+Check the version of the awscli package to verify if it is already installed or not. ( aws -- version and sudo apt get install awscli)
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ( If curl package is not installed, use apt-get install aws-cli command.)
+unzip awscliv2.zip
+sudo ./aws/install. If curl package is not installed then use sudo apt get install awscli
+
+Enable S3 access on EC2 instance ( give only access that is necessary)
+
+After installing the awscli package, now enable S3 access on the EC2 instance so the EC2 instance can store data to S3. There are two ways to grant access to the EC2 instance. You can use any of them to grant access.
+Grant access using IAM role (recommended way)
+Grant access using Access key ID
+ 
+Install LogRotate 
+Upload files to S3 from EC2
+
+Before uploading the files to S3, first, create a S3 bucket. From the management console, search for S3.
+
+/home/*.log
+{
+	copytruncate
+	rotate 1
+	daily
+	missingok
+	dateext
+  dateformat -%d-%m-%Y
+	dateyesterday
+	compress
+        extension .log
+}
+
+Date=$(date '+%b%Y')
+aws s3 sync /home/ubuntu/rakesh/ s3://bucketname/${Date}/ --exclude "*" --include "*.*.log.gz"
