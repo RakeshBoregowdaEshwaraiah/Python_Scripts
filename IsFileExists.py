@@ -18,4 +18,5 @@ def searchFile(fileName):
                 exit()
 
 if __name__ == '__main__':
-    searchFile('new_file.txt')
+    searchFile('new_file.txt')  
+    #searchingfile
